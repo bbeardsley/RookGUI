@@ -7,6 +7,6 @@ x64
 *.txt
 *.synctex.gz
 *.toc
-Rook/x64
-Rook/Resources
-Rook/GeneratedFiles
+RookGUI/x64
+RookGUI/Resources
+RookGUI/GeneratedFiles
