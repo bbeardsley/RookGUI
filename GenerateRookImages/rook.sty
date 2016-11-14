@@ -1,0 +1,150 @@
+\usepackage{tikz}
+\usetikzlibrary{backgrounds}
+\usepackage{pifont}
+\usepackage{graphicx}
+
+\usepackage{fix-cm}
+
+\makeatletter
+\newcommand\HUGE{\@setfontsize\Huge{60}{60}} 
+
+\definecolor{rookgreen}{RGB}{61,137,34}
+\definecolor{rookred}{RGB}{211,23,23}
+\definecolor{rookyellow}{RGB}{255,140,0}
+\definecolor{rookwhite}{RGB}{254,254,254}
+
+\newcommand{\biggreenrookcard}[1]{%
+{\color{rookgreen}%
+\begin{tikzpicture}[%
+	show background rectangle,%
+	background rectangle/.style={fill=rookwhite}]%
+\draw[line width=1mm] (0, 0) rectangle(5, 8);
+\node[text width=4,above left,inner sep=0] at (0.5, 7){\huge \textbf{#1}};
+\node[text width=4,above left,inner sep=0] at (1.45, 7.3){\scriptsize \textbf{GREEN}};
+\draw[rounded corners=2mm,line width=1mm] (1, 5.5) rectangle(4, 2.5);
+\node[text width=4,above left,inner sep=0,rotate=180] at (4.5, 1){\huge \textbf{#1}};
+\node[text width=4,above left,inner sep=0,rotate=180] at (3.55, 0.7){\scriptsize \textbf{GREEN}};
+\node[text width=4,above left,inner sep=0] at (1.5, 3.25){\HUGE \textbf{#1}};
+\end{tikzpicture}%
+}%
+}
+
+\newcommand{\smallgreenrookcard}[1]{%
+{\color{rookgreen}%
+\begin{tikzpicture}[%
+	show background rectangle,%
+	background rectangle/.style={fill=rookwhite}]%
+\draw[line width=1mm] (0, 0) rectangle(5, 8);
+\node[text width=4,above left,inner sep=0] at (0.85, 7){\huge \textbf{#1}};
+\node[text width=4,above left,inner sep=0] at (1.45, 7.3){\scriptsize \textbf{GREEN}};
+\draw[rounded corners=2mm,line width=1mm] (1, 5.5) rectangle(4, 2.5);
+\node[text width=4,above left,inner sep=0,rotate=180] at (4.15, 1){\huge \textbf{#1}};
+\node[text width=4,above left,inner sep=0,rotate=180] at (3.55, 0.7){\scriptsize \textbf{GREEN}};
+\node[text width=4,above left,inner sep=0] at (2.1, 3.25){\HUGE \textbf{#1}};
+\end{tikzpicture}%
+}%
+}
+
+\newcommand{\bigredrookcard}[1]{%
+{\color{rookred}%
+\begin{tikzpicture}[%
+	show background rectangle,%
+	background rectangle/.style={fill=rookwhite}]%
+\draw[line width=1mm] (0, 0) rectangle(5, 8);
+\node[text width=4,above left,inner sep=0] at (0.5, 7){\huge \textbf{#1}};
+\node[text width=4,above left,inner sep=0] at (1.45, 7.3){\scriptsize \textbf{RED}};
+\draw[rounded corners=2mm,line width=1mm] (1, 5.5) rectangle(4, 2.5);
+\node[text width=4,above left,inner sep=0,rotate=180] at (4.5, 1){\huge \textbf{#1}};
+\node[text width=4,above left,inner sep=0,rotate=180] at (3.55, 0.7){\scriptsize \textbf{RED}};
+\node[text width=4,above left,inner sep=0] at (1.5, 3.25){\HUGE \textbf{#1}};
+\end{tikzpicture}%
+}%
+}
+
+\newcommand{\smallredrookcard}[1]{%
+{\color{rookred}%
+\begin{tikzpicture}[%
+	show background rectangle,%
+	background rectangle/.style={fill=rookwhite}]%
+\draw[line width=1mm] (0, 0) rectangle(5, 8);
+\node[text width=4,above left,inner sep=0] at (0.85, 7){\huge \textbf{#1}};
+\node[text width=4,above left,inner sep=0] at (1.45, 7.3){\scriptsize \textbf{RED}};
+\draw[rounded corners=2mm,line width=1mm] (1, 5.5) rectangle(4, 2.5);
+\node[text width=4,above left,inner sep=0,rotate=180] at (4.15, 1){\huge \textbf{#1}};
+\node[text width=4,above left,inner sep=0,rotate=180] at (3.55, 0.7){\scriptsize \textbf{RED}};
+\node[text width=4,above left,inner sep=0] at (2.1, 3.25){\HUGE \textbf{#1}};
+\end{tikzpicture}%
+}%
+}
+
+\newcommand{\bigblackrookcard}[1]{%
+\begin{tikzpicture}[%
+	show background rectangle,%
+	background rectangle/.style={fill=rookwhite}]%
+\draw[line width=1mm] (0, 0) rectangle(5, 8);
+\node[text width=4,above left,inner sep=0] at (0.5, 7){\huge \textbf{#1}};
+\node[text width=4,above left,inner sep=0] at (1.45, 7.3){\scriptsize \textbf{BLACK}};
+\draw[rounded corners=2mm,line width=1mm] (1, 5.5) rectangle(4, 2.5);
+\node[text width=4,above left,inner sep=0,rotate=180] at (4.5, 1){\huge \textbf{#1}};
+\node[text width=4,above left,inner sep=0,rotate=180] at (3.55, 0.7){\scriptsize \textbf{BLACK}};
+\node[text width=4,above left,inner sep=0] at (1.5, 3.25){\HUGE \textbf{#1}};
+\end{tikzpicture}%
+}
+
+\newcommand{\smallblackrookcard}[1]{%
+\begin{tikzpicture}[%
+	show background rectangle,%
+	background rectangle/.style={fill=rookwhite}]%
+\draw[line width=1mm] (0, 0) rectangle(5, 8);
+\node[text width=4,above left,inner sep=0] at (0.85, 7){\huge \textbf{#1}};
+\node[text width=4,above left,inner sep=0] at (1.45, 7.3){\scriptsize \textbf{BLACK}};
+\draw[rounded corners=2mm,line width=1mm] (1, 5.5) rectangle(4, 2.5);
+\node[text width=4,above left,inner sep=0,rotate=180] at (4.15, 1){\huge \textbf{#1}};
+\node[text width=4,above left,inner sep=0,rotate=180] at (3.55, 0.7){\scriptsize \textbf{BLACK}};
+\node[text width=4,above left,inner sep=0] at (2.1, 3.25){\HUGE \textbf{#1}};
+\end{tikzpicture}%
+}
+
+\newcommand{\bigyellowrookcard}[1]{%
+{\color{rookyellow}%
+\begin{tikzpicture}[%
+	show background rectangle,%
+	background rectangle/.style={fill=rookwhite}]%
+\draw[line width=1mm] (0, 0) rectangle(5, 8);
+\node[text width=4,above left,inner sep=0] at (0.5, 7){\huge \textbf{#1}};
+\node[text width=4,above left,inner sep=0] at (1.45, 7.3){\scriptsize \textbf{YELLOW}};
+\draw[rounded corners=2mm,line width=1mm] (1, 5.5) rectangle(4, 2.5);
+\node[text width=4,above left,inner sep=0,rotate=180] at (4.5, 1){\huge \textbf{#1}};
+\node[text width=4,above left,inner sep=0,rotate=180] at (3.55, 0.7){\scriptsize \textbf{YELLOW}};
+\node[text width=4,above left,inner sep=0] at (1.5, 3.25){\HUGE \textbf{#1}};
+\end{tikzpicture}%
+}%
+}
+
+\newcommand{\smallyellowrookcard}[1]{%
+{\color{rookyellow}%
+\begin{tikzpicture}[%
+	show background rectangle,%
+	background rectangle/.style={fill=rookwhite}]%
+\draw[line width=1mm] (0, 0) rectangle(5, 8);
+\node[text width=4,above left,inner sep=0] at (0.85, 7){\huge \textbf{#1}};
+\node[text width=4,above left,inner sep=0] at (1.45, 7.3){\scriptsize \textbf{YELLOW}};
+\draw[rounded corners=2mm,line width=1mm] (1, 5.5) rectangle(4, 2.5);
+\node[text width=4,above left,inner sep=0,rotate=180] at (4.15, 1){\huge \textbf{#1}};
+\node[text width=4,above left,inner sep=0,rotate=180] at (3.55, 0.7){\scriptsize \textbf{YELLOW}};
+\node[text width=4,above left,inner sep=0] at (2.1, 3.25){\HUGE \textbf{#1}};
+\end{tikzpicture}%
+}%
+}
+
+\newcommand{\rookcard}{%
+\begin{tikzpicture}[%
+	show background rectangle,%
+	background rectangle/.style={fill=rookwhite}]%
+\draw[line width=1mm] (0, 0) rectangle(5, 8);
+\vspace{-10mm}
+\node at (2.75,4) {\includegraphics[width=0.35\textwidth]{rook}};
+\end{tikzpicture}
+}
+
+\sffamily

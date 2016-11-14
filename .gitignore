@@ -1,0 +1,12 @@
+*.db
+*.opendb
+x64
+*.aux
+*.out
+*.log
+*.txt
+*.synctex.gz
+*.toc
+Rook/x64
+Rook/Resources
+Rook/GeneratedFiles

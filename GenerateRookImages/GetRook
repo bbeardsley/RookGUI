@@ -1,0 +1,94 @@
+mkdir gif
+
+black='black'
+red='red'
+yellow='yellow'
+green='green'
+
+for i in `seq 1 9`;
+do
+	touch $i$black.tex
+	touch $i$red.tex
+	touch $i$yellow.tex
+	touch $i$green.tex
+
+	str1='\\\documentclass[convert={outext=.gif}]{standalone}\n\n'
+	str2='\\usepackage{rook}\n\n'
+	str3='\\begin{document}\n\n'
+	strblack='\\smallblackrookcard'
+	strred='\\smallredrookcard'
+	stryellow='\\smallyellowrookcard'
+	strgreen='\\smallgreenrookcard'
+	lb='{'
+	rb='}'
+	str4='\n\n\\end{document}'
+
+	sb=$str1$str2$str3$strblack$lb$i$rb$str4
+	sr=$str1$str2$str3$strred$lb$i$rb$str4
+	sy=$str1$str2$str3$stryellow$lb$i$rb$str4
+	sg=$str1$str2$str3$strgreen$lb$i$rb$str4
+	
+	echo | sed "i$sb" > $i$black.tex
+	echo | sed "i$sr" > $i$red.tex
+	echo | sed "i$sy" > $i$yellow.tex
+	echo | sed "i$sg" > $i$green.tex
+
+	pdflatex -shell-escape $i$black.tex
+	pdflatex -shell-escape $i$red.tex
+	pdflatex -shell-escape $i$yellow.tex
+	pdflatex -shell-escape $i$green.tex
+
+done
+
+for i in `seq 10 14`;
+do
+	touch $i$black.tex
+	touch $i$red.tex
+	touch $i$yellow.tex
+	touch $i$green.tex
+
+	str1='\\\documentclass[convert={outext=.gif}]{standalone}\n\n'
+	str2='\\usepackage{rook}\n\n'
+	str3='\\begin{document}\n\n'
+	strblack='\\bigblackrookcard'
+	strred='\\bigredrookcard'
+	stryellow='\\bigyellowrookcard'
+	strgreen='\\biggreenrookcard'
+	lb='{'
+	rb='}'
+	str4='\n\n\\end{document}'
+
+	sb=$str1$str2$str3$strblack$lb$i$rb$str4
+	sr=$str1$str2$str3$strred$lb$i$rb$str4
+	sy=$str1$str2$str3$stryellow$lb$i$rb$str4
+	sg=$str1$str2$str3$strgreen$lb$i$rb$str4
+	
+	echo | sed "i$sb" > $i$black.tex
+	echo | sed "i$sr" > $i$red.tex
+	echo | sed "i$sy" > $i$yellow.tex
+	echo | sed "i$sg" > $i$green.tex
+
+	pdflatex -shell-escape $i$black.tex
+	pdflatex -shell-escape $i$red.tex
+	pdflatex -shell-escape $i$yellow.tex
+	pdflatex -shell-escape $i$green.tex
+
+done
+
+touch rook.tex
+str1='\\\documentclass[convert={outext=.gif}]{standalone}\n\n'
+str2='\\usepackage{rook}\n\n'
+str3='\\begin{document}\n\n'
+strrook='\\rookcard'
+str4='\n\n\\end{document}'
+srook=$str1$str2$str3$strrook$str4
+echo | sed "i$srook" > rook.tex
+
+pdflatex -shell-escape rook.tex
+
+rm *.tex
+rm *.aux
+rm *.log
+rm *.pdf
+
+mv *.gif gif
