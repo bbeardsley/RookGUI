@@ -27,17 +27,31 @@ do
 	sr=$str1$str2$str3$strred$lb$i$rb$str4
 	sy=$str1$str2$str3$stryellow$lb$i$rb$str4
 	sg=$str1$str2$str3$strgreen$lb$i$rb$str4
-	
-	echo | sed "i$sb" > $i$black.tex
-	echo | sed "i$sr" > $i$red.tex
-	echo | sed "i$sy" > $i$yellow.tex
-	echo | sed "i$sg" > $i$green.tex
+
+	echo | gsed "i$sb" > $i$black.tex
+	echo | gsed "i$sr" > $i$red.tex
+	echo | gsed "i$sy" > $i$yellow.tex
+	echo | gsed "i$sg" > $i$green.tex
 
 	pdflatex -shell-escape $i$black.tex
 	pdflatex -shell-escape $i$red.tex
 	pdflatex -shell-escape $i$yellow.tex
 	pdflatex -shell-escape $i$green.tex
 
+    pdf2svg $i$black.pdf $i$black.svg
+    pdf2svg $i$red.pdf $i$red.svg
+    pdf2svg $i$yellow.pdf $i$yellow.svg
+    pdf2svg $i$green.pdf $i$green.svg
+
+    svgo $i$black.svg
+    svgo $i$red.svg
+    svgo $i$yellow.svg
+    svgo $i$green.svg
+
+    rm *.tex
+    rm *.aux
+    rm *.log
+    rm *.pdf
 done
 
 for i in `seq 10 14`;
@@ -62,17 +76,31 @@ do
 	sr=$str1$str2$str3$strred$lb$i$rb$str4
 	sy=$str1$str2$str3$stryellow$lb$i$rb$str4
 	sg=$str1$str2$str3$strgreen$lb$i$rb$str4
-	
-	echo | sed "i$sb" > $i$black.tex
-	echo | sed "i$sr" > $i$red.tex
-	echo | sed "i$sy" > $i$yellow.tex
-	echo | sed "i$sg" > $i$green.tex
+
+	echo | gsed "i$sb" > $i$black.tex
+	echo | gsed "i$sr" > $i$red.tex
+	echo | gsed "i$sy" > $i$yellow.tex
+	echo | gsed "i$sg" > $i$green.tex
 
 	pdflatex -shell-escape $i$black.tex
 	pdflatex -shell-escape $i$red.tex
 	pdflatex -shell-escape $i$yellow.tex
 	pdflatex -shell-escape $i$green.tex
 
+    pdf2svg $i$black.pdf $i$black.svg
+    pdf2svg $i$red.pdf $i$red.svg
+    pdf2svg $i$yellow.pdf $i$yellow.svg
+    pdf2svg $i$green.pdf $i$green.svg
+
+    svgo $i$black.svg
+    svgo $i$red.svg
+    svgo $i$yellow.svg
+    svgo $i$green.svg
+
+    rm *.tex
+    rm *.aux
+    rm *.log
+    rm *.pdf
 done
 
 touch rook.tex
@@ -82,13 +110,15 @@ str3='\\begin{document}\n\n'
 strrook='\\rookcard'
 str4='\n\n\\end{document}'
 srook=$str1$str2$str3$strrook$str4
-echo | sed "i$srook" > rook.tex
+echo | gsed "i$srook" > rook.tex
 
 pdflatex -shell-escape rook.tex
+pdf2svg rook.pdf rook.svg
+svgo rook.svg
 
 rm *.tex
 rm *.aux
 rm *.log
 rm *.pdf
-
 mv *.gif gif
+mv *.svg svg
